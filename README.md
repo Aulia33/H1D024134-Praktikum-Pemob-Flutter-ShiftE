@@ -64,13 +64,10 @@ flutter run
 ```
 
 ### Hasil / Screenshot
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/254a44c9-e846-476f-9d75-65e180da05a1" />
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/e474022f-d41f-4fd7-9ab2-237cc8b65df7" />
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/37afe799-5372-4f94-beb3-1773967e980e" />
 
-<!-- ![Hello World] <img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/5c9fc76f-e087-49fa-8136-59bac075563d" />
- -->
-<!-- ![Form Produk]<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/29fea529-03d9-4cd7-b6d4-d3a8683a13b8" />
- -->
-<!-- ![List Produk] <img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/e8a4c2c3-70d3-4707-a491-1b7b9c15eded" />
- -->
 
 ### Kesimpulan Praktikum
 
