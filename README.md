@@ -72,3 +72,64 @@ flutter run
 ### Kesimpulan Praktikum
 
 Pertemuan kedua memberikan pemahaman tentang penggunaan widget dasar di Flutter, perbedaan `StatelessWidget` dan `StatefulWidget`, pengelolaan form input, navigasi antar halaman, serta penyusunan daftar item menggunakan `ListView`.
+
+## 📝 Tugas Pertemuan 3: Routes, Side Menu, Login dan Local Storage
+**Tanggal**: Rabu, 4 November 2026
+
+### Deskripsi Teknis & Non-Teknis
+* **Non-Teknis**: Implementasi sistem autentikasi pengguna (login), manajemen penyimpanan data lokal (*local storage*) pada perangkat, pengelolaan alur navigasi (*routing*), serta pembuatan menu samping (*drawer / side menu*) untuk navigasi multi-halaman.
+* **Teknis**:
+  * **Menambahkan Dependency**: Menambahkan package `shared_preferences` ke dalam file `pubspec.yaml` untuk kebutuhan penyimpanan sesi pengguna secara persisten pada penyimpanan lokal perangkat.
+  * **Halaman Login (`login_page.dart`)**:
+    * Menggunakan `StatefulWidget` dengan `TextEditingController` untuk mengontrol input username dan password.
+    * Mengimplementasikan fungsi `_saveUsername()` untuk menyimpan username ke dalam local storage via `SharedPreferences`.
+    * Mengimplementasikan `_showInput()` untuk merender `TextField` dengan placeholder dan opsi sensor password (`obscureText`).
+    * Mengimplementasikan `_showDialog()` untuk menampilkan pop-up konfirmasi (`AlertDialog`).
+    * Menambahkan logika autentikasi: jika username dan password adalah `admin`, sistem menyimpan sesi pengguna dan berpindah ke `HomePage`; jika tidak sesuai, sistem menampilkan dialog kesalahan.
+  * **Konfigurasi Routing Awal (`main.dart`)**:
+    * Mengonfigurasi `MaterialApp` dengan tema Material klasik biru (`primarySwatch: Colors.blue`, `useMaterial3: false`) agar serasi dengan desain modul.
+    * Mengatur properti `home` agar langsung memuat `LoginPage`.
+  * **Halaman Utama (`home_page.dart`)**:
+    * Menggunakan fungsi asinkronus `_loadUsername()` untuk membaca data username yang telah tersimpan di `SharedPreferences` saat halaman dimuat.
+    * Menampilkan teks sambutan dengan nama user di tengah layar (`Center`).
+    * Memasang properti `drawer` dengan widget `Sidemenu` untuk navigasi.
+  * **Side Menu / Drawer (`sidemenu.dart`)**:
+    * Membangun menu navigasi laci menggunakan `Drawer`, `ListView`, dan `DrawerHeader`.
+    * Menyediakan opsi menu `ListTile` untuk navigasi ke halaman **Home** (`HomePage`) dan halaman **About** (`AboutPage`) menggunakan `Navigator.push`.
+  * **Halaman About (`about_page.dart`)**:
+    * Membuat halaman informasi aplikasi dengan `AppBar`, teks konten di bagian `Center`, serta menyertakan `drawer` agar drawer menu tetap dapat diakses dari halaman ini.
+
+### Struktur Folder
+```text
+lib/
+├── main.dart
+├── login_page.dart
+├── home_page.dart
+├── sidemenu.dart
+├── about_page.dart
+├── hello_world.dart
+├── column_widget.dart
+├── row_widget.dart
+└── ui/
+    ├── produk_form.dart
+    ├── produk_detail.dart
+    └── produk_page.dart
+```
+
+### Kredensial Login (Testing)
+* **Username**: `admin`
+* **Password**: `admin`
+
+### Cara Menjalankan
+```bash
+flutter pub get
+flutter run
+```
+
+### Hasil / Screenshot
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/9fd07499-0b69-4a87-b87c-ab0b96506175" />
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/a3cd7652-d5fd-4791-978d-2d4e7217287d" />
+
+
+### Kesimpulan Praktikum
+Pertemuan ketiga memberikan pemahaman mendalam mengenai pembuatan sistem autentikasi sederhana pada Flutter, penggunaan `shared_preferences` untuk menyimpan dan membaca data lokal perangkat, implementasi dialog interaktif (`AlertDialog`), serta pembuatan navigasi hierarkis dan menu drawer samping (`Drawer` & `ListTile`) untuk menghubungkan berbagai halaman aplikasi.
